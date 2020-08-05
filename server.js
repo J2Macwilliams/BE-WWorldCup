@@ -1,7 +1,8 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 5000;
+const port = process.env.PORT || 5000;
 const app = express();
 const { data } = require('./data');
 
@@ -18,3 +19,4 @@ app.get('/api/players', (req, res) => {
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
 });
+
