@@ -15,8 +15,10 @@ const players = data.map((player, index) => ({ ...player, id: index }));
 app.get('/api/players', (req, res) => {
   res.send(players);
 });
+app.get('/', (req, res) => {
+  res.send(`<h3>Score! You've made it to the API</h3>`)
+  });
 
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
 });
-
