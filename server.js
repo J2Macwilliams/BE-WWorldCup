@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -16,8 +14,6 @@ const players = data.map((player, index) => ({ ...player, id: index }));
 app.get('/api/players', (req, res) => {
   res.send(players);
 });
-
-const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
